@@ -55,7 +55,7 @@ val commonSettings = Seq(
 )
 
 
-val sparkVersion = "1.6.0"
+val sparkVersion = "1.6.0-cdh5.8.0"
 
 
 // resolvers ++= Seq(
@@ -63,11 +63,11 @@ val sparkVersion = "1.6.0"
 // )
 
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
-  "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
-  "org.apache.spark" %% "spark-mllib" % sparkVersion % "provided",
-  "org.apache.spark" %% "spark-streaming" % sparkVersion % "provided",
-  "org.apache.spark" %% "spark-hive" % sparkVersion % "provided"
+  "org.apache.spark" %% "spark-core" % sparkVersion % "provided"  withSources() withJavadoc(),
+  "org.apache.spark" %% "spark-sql" % sparkVersion % "provided"  withSources() withJavadoc(),
+  "org.apache.spark" %% "spark-mllib" % sparkVersion % "provided"  withSources() withJavadoc(),
+  "org.apache.spark" %% "spark-streaming" % sparkVersion % "provided" withSources() withJavadoc(),
+  "org.apache.spark" %% "spark-hive" % sparkVersion % "provided" withSources() withJavadoc()
 )
 
 //libraryDependencies += "org.ddahl" %% "rscala" % "2.5.0"
